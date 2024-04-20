@@ -9,6 +9,12 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.document_loaders.pdf import PyPDFDirectoryLoader
+import os 
+import streamlit as st
+from dotenv import load_dotenv
+## Langsmith tracking
+os.environ["LANGCHAIN_TRACING_V2"]="true"
+os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 model1 = Ollama(model="mistral")
 model2 = Ollama(model="llama2")
@@ -44,7 +50,7 @@ def rag(urls, pdfs , question , chat_history):
     
     template = """
                 You are a professional expertise with acurate knowledge on mental health.
-                Your job is to use the following context to answer questions about a how to take care of a baby.
+                Your job is to use the following context to answer questions about a patient with mental discomfort and aswer the queries as therapist}.
                 The context provided are from academic researches and are highly reliable. 
                 You should try to stick to the context as much as possible.
                 The context is in a particular format but you should NOT mimic the style. 
