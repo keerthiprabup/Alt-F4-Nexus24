@@ -11,3 +11,4 @@ chromadb
 faiss-cpu
 beautifulsoup4
 langserve
+streamlit-authenticator
