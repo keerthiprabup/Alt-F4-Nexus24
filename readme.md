@@ -13,7 +13,7 @@ Saheli is made for a large group of people who are afraid to address their menta
 ## -> Technologies
 - Python
   - Frontend - Streamlit
-  - Models - Llama finetuned for sentiment analysis
+  - Models - Llama finetuned for sentiment analysis also implementing open ai for faster response
   - Backend - Chroma DB for vector embedding
   - Container - Docker
   - Deployment - Microsoft Azure
