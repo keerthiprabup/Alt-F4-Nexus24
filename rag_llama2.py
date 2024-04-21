@@ -49,37 +49,22 @@ def rag(question):
     final_documents=text_splitter.split_documents(documents)
 
 
-    # urls = 'https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response'
-    # urls_list = urls.split("\n")
-    # docs = [WebBaseLoader(url).load() for url in urls_list]
-    # docs_list = [item for sublist in docs for item in sublist]
 
-    # text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000,
-    #                                                 chunk_overlap=50,
-    #                                                 length_function=len)
-
-    # all_splits = text_splitter.split_documents(docs_list)
-
-    huggingface_embeddings=HuggingFaceBgeEmbeddings(
-        model_name="BAAI/bge-small-en-v1.5",
-        model_kwargs={'device':'cpu'},
-        encode_kwargs={'normalize_embeddings':True}
-
-    )
-
-    conversation = ConversationChain(
-        llm=model, verbose=True, memory=ConversationBufferMemory()
-    )
+    # conversation = ConversationChain(
+    #     llm=model, verbose=True, memory=ConversationBufferMemory()
+    # )
 
     prompt_template = """
                         SPEAK EMPATHETICALLY
                         you are my best friend and a person i can trust with all my feelings, you need to guide me though my mentalailment with an open mind
                         help me succeed in life and help  me become a better person, helpme upgarde to a better lifestyle, and take care of an anxious person like myself.
                         Your job is to use the following context to answer questions about a how to take care of the anxious person.
+                        CONSIDER DATA FROM OUR PREVIOUS CONVERSATION
                         The context provided are from academic researches and are highly reliable.
                         The context is in a particular format but you SHOULD NOT mimic the style.
                         Always answer the question using normal language with emotion and sentiment.
-                        “limit your response to 75 words” .
+                        START HAVING A CONVERSATION WITH ME.
+                        “limit your response to 20 words” .
                         Context: {context}
 
                         """
