@@ -8,14 +8,6 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
 from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain.document_loaders.pdf import PyPDFDirectoryLoader
-from langchain_core.messages import HumanMessage
-from langchain.chains import create_retrieval_chain
-from langchain.chains import create_history_aware_retriever
-import bs4
-from langchain import hub
-from langchain.chains.combine_documents import create_stuff_documents_chain
-import os 
-from dotenv import load_dotenv
 
 model = Ollama(model="llama2")
 ## Langmith tracking
@@ -89,4 +81,3 @@ chat_history.extend([HumanMessage(content=question), ai_msg_1["answer"]])
 second_question = "what is his networth?"
 ai_msg_2 = rag_chain.invoke({"input": second_question, "chat_history": chat_history})
 
-print(ai_msg_2["answer"])
