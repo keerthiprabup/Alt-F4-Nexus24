@@ -1,0 +1,65 @@
+.saheli-chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh; /* This will make the component take the full height of the viewport */
+  padding: 20px;
+  background-color: #232323; /* Darker background color */
+  color: white; /* Text color */
+}
+
+.conversation-container {
+  flex: 1;
+  width: 100%; /* Adjust as needed */
+  max-width: 600px; /* Adjust as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 20px;
+}
+
+.input-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Adjust to move the input box higher */
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  background-color: #434343; /* Darker input background color */
+  color: white; /* Text color */
+}
+
+.input-container button {
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  cursor: pointer;
+}
+
+
+
+.user-message {
+    background-color: #dcf8c6;
+    color: #333;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 40%; /* Adjust to fit the container */
+    align-self: flex-end; /* Align user message to the right */
+  }
+  
+  .saheli-message {
+    background-color: #e5e5ea;
+    color: #333;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 40%; /* Adjust to fit the container */
+    align-self: flex-start;
+  }
